@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -207,13 +208,6 @@ public class TagGroup extends ViewGroup {
             // Append the initial INPUT tag.
             appendInputTag();
 
-            // Set the click listener to detect the end-input event.
-            setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    submitTag();
-                }
-            });
         }
     }
 
@@ -677,7 +671,7 @@ public class TagGroup extends ViewGroup {
         }
 
 
-        public TagView(Context context, final int state, CharSequence text) {
+        public TagView(final Context context, final int state, CharSequence text) {
             super(context);
             setPadding(horizontalPadding, verticalPadding, horizontalPadding, verticalPadding);
             setLayoutParams(new TagGroup.LayoutParams(
@@ -719,6 +713,11 @@ public class TagGroup extends ViewGroup {
                                 // If the input content is available, end the input and dispatch
                                 // the event, then append a new INPUT state tag.
                                 endInput();
+                                // hide keyboard
+                                InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                                assert imm != null;
+                                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
                                 if (mOnTagChangeListener != null) {
                                     mOnTagChangeListener.onAppend(TagGroup.this, getText().toString());
                                 }
