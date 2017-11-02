@@ -4,6 +4,8 @@
         <attr name="atg_isAppendMode" format="boolean" />
         <!-- If the tag group is in append mode, what the hint of input tag. -->
         <attr name="atg_inputHint" format="string" />
+        <!-- If the tag group is in append mode, what the hint of input tag. -->
+        <attr name="atg_preText" format="string" />
 
         <!-- The tag view outline border color. -->
         <attr name="atg_borderColor" format="color" />

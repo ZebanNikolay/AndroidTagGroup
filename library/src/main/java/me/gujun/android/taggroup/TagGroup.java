@@ -73,6 +73,11 @@ public class TagGroup extends ViewGroup {
     private CharSequence inputHint;
 
     /**
+     * The text before main text.
+     */
+    private CharSequence preText;
+
+    /**
      * The tag outline border color.
      */
     private int borderColor;
@@ -179,6 +184,7 @@ public class TagGroup extends ViewGroup {
         try {
             isAppendMode = a.getBoolean(R.styleable.TagGroup_atg_isAppendMode, false);
             inputHint = a.getText(R.styleable.TagGroup_atg_inputHint);
+            preText = a.getText(R.styleable.TagGroup_atg_preText);
             borderColor = a.getColor(R.styleable.TagGroup_atg_borderColor, default_border_color);
             textColor = a.getColor(R.styleable.TagGroup_atg_textColor, default_text_color);
             backgroundColor = a.getColor(R.styleable.TagGroup_atg_backgroundColor, default_background_color);
@@ -679,7 +685,7 @@ public class TagGroup extends ViewGroup {
                     TagGroup.LayoutParams.WRAP_CONTENT));
 
             setGravity(Gravity.CENTER);
-            setText(text);
+            setText(text == null ? null : preText.toString() + text);
             setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
 
             mState = state;
@@ -741,6 +747,7 @@ public class TagGroup extends ViewGroup {
             setMovementMethod(null);
 
             mState = STATE_NORMAL;
+            setText(preText.toString() + getText());
             invalidatePaint();
             requestLayout();
         }

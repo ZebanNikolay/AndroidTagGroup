@@ -6,6 +6,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="atg_isAppendMode">true</item>
         <item name="atg_inputHint">@string/add_tag</item>
+        <item name="atg_preText">@string/pre_text</item>
         <item name="atg_borderColor">#c6c6c6</item>
         <item name="atg_backgroundColor">#c6c6c6</item>
         <item name="atg_pressedBackgroundColor">#c6c6c6</item>
