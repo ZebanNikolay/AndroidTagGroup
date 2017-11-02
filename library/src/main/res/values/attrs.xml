@@ -18,6 +18,8 @@
         <attr name="atg_inputHintColor" format="color" />
         <!-- The input tag type text color, when in append mode. -->
         <attr name="atg_inputTextColor" format="color" />
+        <!-- The input tag type text color, when in append mode. -->
+        <attr name="atg_inputBackgroundColor" format="color" />
 
         <!-- The checked tag view outline border color. -->
         <attr name="atg_checkedBorderColor" format="color" />

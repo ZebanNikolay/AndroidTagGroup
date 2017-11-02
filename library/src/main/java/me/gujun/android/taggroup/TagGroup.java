@@ -103,6 +103,11 @@ public class TagGroup extends ViewGroup {
     private int inputTextColor;
 
     /**
+     * The input tag type background color.
+     */
+    private int inputBackgroundColor;
+
+    /**
      * The tag background color, when the tag is being pressed.
      */
     private int pressedBackgroundColor;
@@ -180,6 +185,7 @@ public class TagGroup extends ViewGroup {
             dashBorderColor = a.getColor(R.styleable.TagGroup_atg_dashBorderColor, default_dash_border_color);
             inputHintColor = a.getColor(R.styleable.TagGroup_atg_inputHintColor, default_input_hint_color);
             inputTextColor = a.getColor(R.styleable.TagGroup_atg_inputTextColor, default_input_text_color);
+            inputBackgroundColor = a.getColor(R.styleable.TagGroup_atg_inputBackgroundColor, default_background_color);
             pressedBackgroundColor = a.getColor(R.styleable.TagGroup_atg_pressedBackgroundColor, default_pressed_background_color);
             borderStrokeWidth = a.getDimension(R.styleable.TagGroup_atg_borderStrokeWidth, default_border_stroke_width);
             textSize = a.getDimension(R.styleable.TagGroup_atg_textSize, default_text_size);
@@ -758,7 +764,7 @@ public class TagGroup extends ViewGroup {
                 if (mState == STATE_INPUT) {
                     mBorderPaint.setColor(dashBorderColor);
                     mBorderPaint.setPathEffect(mPathEffect);
-                    mBackgroundPaint.setColor(backgroundColor);
+                    mBackgroundPaint.setColor(inputBackgroundColor);
                     setHintTextColor(inputHintColor);
                     setTextColor(inputTextColor);
                 } else {
