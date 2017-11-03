@@ -1,7 +1,6 @@
 # `AndroidTagGroup`
 
-[![Release 1.4](https://img.shields.io/badge/Release-1.4.1-green.svg)](https://github.com/2dxgujun/AndroidTagGroup/releases)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/me.gujun.android.taggroup/library/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/me.gujun.android.taggroup/library)
+[![Release](https://jitpack.io/v/ZebanNikolay/AndroidTagGroup.svg)](https://jitpack.io/#ZebanNikolay/AndroidTagGroup)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidTagGroup-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1539)
 [![Build Status](https://travis-ci.org/2dxgujun/AndroidTagGroup.png?branch=master)](https://travis-ci.org/2dxgujun/AndroidTagGroup)
 
@@ -25,20 +24,19 @@ Also you can contribute new idea to me.
 ## Step 1
 
 #### Gradle
-```groovy
-dependencies {
-   compile 'me.gujun.android.taggroup:library:1.4@aar'
+-  Add the following to your project level `build.gradle`:
+```gradle
+allprojects {
+	repositories {
+		maven { url "https://jitpack.io" }
+	}
 }
 ```
-
-#### Maven
-```xml
-<dependency>
-    <groupId>me.gujun.android.taggroup</groupId>
-    <artifactId>library</artifactId>
-    <version>1.4</version>
-    <type>apklib</type>
-</dependency>
+-  Add this to your app `build.gradle`:
+```gradle
+dependencies {
+   compile 'com.github.ZebanNikolay:AndroidTagGroup:1.5'
+}
 ```
 
 ## Step 2
